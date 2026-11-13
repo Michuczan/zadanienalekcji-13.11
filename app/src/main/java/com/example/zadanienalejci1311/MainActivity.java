@@ -43,21 +43,24 @@ public class MainActivity extends AppCompatActivity {
         obrazki.add(R.drawable.merc);
         obrazki.add(R.drawable.chiron);
         obrazki.add(R.drawable.veyron);
+        main = findViewById(R.id.main);
 
         buttonNastepny.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                aktualnyObraz++;
                 if (aktualnyObraz >= obrazki.size()) {
                     aktualnyObraz = 0;
-                    imageView.setImageResource(obrazki.get(aktualnyObraz));
+
                 }
+                imageView.setImageResource(obrazki.get(aktualnyObraz));
             }
         });
 
         buttonZolty.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                main.setBackgroundColor(Color.parseColor("#FFFF00"));
+                main.setBackgroundColor(Color.YELLOW);
             }
         });
 
